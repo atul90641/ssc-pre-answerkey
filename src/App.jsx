@@ -25,20 +25,8 @@ function App() {
     }
   };
 
-  const containerStyle = {
-    textAlign: "center",
-    padding: "20px",
-  };
-
-  const footerStyle = {
-    marginTop: "20px",
-    padding: "10px",
-    fontSize: "14px",
-    color: "#888",
-  };
-
   return (
-    <div style={containerStyle}>
+    <div className="container">
       <h1>Quiz Result Calculator</h1>
       <input
         type="text"
@@ -52,9 +40,19 @@ function App() {
       {data && <Results htmlData={data} />}
 
       {/* Footer Section */}
-      <footer style={footerStyle}>
+      <footer>
         Made by Atul Kumar
       </footer>
+
+      <style jsx>{`
+        footer {
+          margin-top: 20px;
+          padding: 10px;
+          font-size: 14px;
+          color: #888;
+          text-align: center;
+        }
+      `}</style>
     </div>
   );
 }
