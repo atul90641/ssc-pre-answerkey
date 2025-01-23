@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Results from "./Results";
+import './App.css'; // Import the CSS
 
 function App() {
   const [url, setUrl] = useState("");
@@ -39,20 +40,15 @@ function App() {
 
       {data && <Results htmlData={data} />}
 
+      {/* Link Button in Top Right Corner */}
+      <a href="https://cgl-mains-answerkey.vercel.app" target="_blank" rel="noopener noreferrer">
+        <button className="link-button">CGL Mains Answer Key</button>
+      </a>
+
       {/* Footer Section */}
-      <footer>
+      <footer className="footer">
         Made by Atul Kumar
       </footer>
-
-      <style jsx>{`
-        footer {
-          margin-top: 20px;
-          padding: 10px;
-          font-size: 14px;
-          color: #888;
-          text-align: center;
-        }
-      `}</style>
     </div>
   );
 }
