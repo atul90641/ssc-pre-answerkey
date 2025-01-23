@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Results from "./Results";
-import './App.css'; // Import the CSS
 
 function App() {
   const [url, setUrl] = useState("");
@@ -20,16 +19,26 @@ function App() {
     }
   };
 
-
-
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       handleFetchResults();
     }
   };
 
+  const containerStyle = {
+    textAlign: "center",
+    padding: "20px",
+  };
+
+  const footerStyle = {
+    marginTop: "20px",
+    padding: "10px",
+    fontSize: "14px",
+    color: "#888",
+  };
+
   return (
-    <div className="container">
+    <div style={containerStyle}>
       <h1>Quiz Result Calculator</h1>
       <input
         type="text"
@@ -41,6 +50,11 @@ function App() {
       <button onClick={handleFetchResults}>Get Results</button>
 
       {data && <Results htmlData={data} />}
+
+      {/* Footer Section */}
+      <footer style={footerStyle}>
+        Made by Atul Kumar
+      </footer>
     </div>
   );
 }
